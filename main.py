@@ -2,7 +2,7 @@ import numpy as np
 import sounddevice as sd #https://python-sounddevice.readthedocs.io/en/0.4.6/usage.html
 import soundfile as sf #https://pypi.org/project/soundfile/
 import librosa #https://librosa.org/doc/latest/index.html
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt #https://matplotlib.org/stable/tutorials/pyplot.html
 import matplotlib
 
 filename = 'Orkester.wav'
