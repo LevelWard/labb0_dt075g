@@ -1,16 +1,12 @@
-# This is a sample Python script.
+import numpy as np
+import sounddevice as sd # https://python-sounddevice.readthedocs.io/en/0.4.6/usage.html
+import soundfile as sf # https://pypi.org/project/soundfile/
+import librosa # https://librosa.org/doc/latest/index.html
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+filename = 'Orkester.wav'
+# Extract data and sampling rate from file
+data, fs = sf.read(filename, dtype='float32')
+sd.play(data, fs)
+status = sd.wait()  # Wait until file is done playing
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
