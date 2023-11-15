@@ -2,7 +2,6 @@ import numpy as np
 import sounddevice as sd #https://python-sounddevice.readthedocs.io/en/0.4.6/usage.html
 import soundfile as sf #https://pypi.org/project/soundfile/
 import matplotlib.pyplot as plt
-import synthesize_sound
 
 def playFile(filename):
     # Extract audio from file. data = sound and fs = Hz.
