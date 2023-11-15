@@ -8,10 +8,10 @@ def synthesize_sine_sound():
     # Sine wave audio synthesized.
     p = pyaudio.PyAudio()
 
-    volume = 0.15  # range [0.0, 1.0]
+    volume = 1.0  # range [0.0, 1.0]
     fs = 44100  # sampling rate, Hz, must be integer
     duration = 23  # in seconds, may be float
-    f = 440.0  # sine frequency, Hz, may be float
+    f = 50.40  # sine frequency, Hz, may be float
 
     # generate samples, note conversion to float32 array
     samples = (np.sin(2 * np.pi * np.arange(fs * duration) * f / fs)).astype(np.float32)

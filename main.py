@@ -13,8 +13,9 @@ def playFile(filename):
     # print(np.ndarray.tolist(data))
 
     print("Sampling rate: " + str(fs))
+
+    newSound = sample_modifying.sumOfSamples(fs, synthesize_sound.synthesize_sine_sound())
     sd.play(data, fs)
-    status = sd.wait()  # Wait until file is done playing
 
 
 def plotFileData(filename):
@@ -36,3 +37,4 @@ def plotFileData(filename):
 audioFile = "Orkester.wav"
 plotFileData(audioFile)
 playFile(audioFile)
+status = sd.wait()  # Wait until file is done playing
