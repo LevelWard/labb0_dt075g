@@ -5,26 +5,35 @@ import librosa #https://librosa.org/doc/latest/index.html
 import matplotlib.pyplot as plt #https://matplotlib.org/stable/tutorials/pyplot.html
 import matplotlib
 
-filename = 'Orkester.wav'
-# Extract audio from file. data = sound and fs = Hz.
-data, fs = sf.read(filename, dtype='float32')
 
-#print(np.ndarray.tolist(data))
+def playFile(filename):
+    # Extract audio from file. data = sound and fs = Hz.
+    data, fs = sf.read(filename, dtype='float32')
 
-print("Sampling rate: " + str(fs))
-sd.play(data, fs)
-status = sd.wait()  # Wait until file is done playing
+    # print(np.ndarray.tolist(data))
 
-#Reshape the data as timevector
-shapeData = np.shape(data)
-dataSize = shapeData[0]
-timeVec = np.linspace(0, 0.01, dataSize)
-timeVec = np.arange(dataSize)*0.01
+    print("Sampling rate: " + str(fs))
+    sd.play(data, fs)
+    status = sd.wait()  # Wait until file is done playing
 
-#Plot the data
-plt.figure()
-plt.plot(timeVec, data)
-plt.xlabel("Frequency [Hz]")
-plt.ylabel("Period time [Sec]")
-plt.title("F(t)")
-plt.show()
+
+def plotFileData(filename):
+    data, fs = sf.read(filename, dtype='float32')
+    # Reshape the data as timevector
+    shapeData = np.shape(data)
+    dataSize = shapeData[0]
+    timeVec = np.linspace(0, 0.01, dataSize)
+    timeVec = np.arange(dataSize) * 0.01
+    # Plot the data
+    plt.figure()
+    plt.plot(timeVec, data)
+    plt.xlabel("Frequency [Hz]")
+    plt.ylabel("Period time [Sec]")
+    plt.title("F(t)")
+    plt.show()
+
+
+audioFile = "Orkester.wav"
+
+plotFileData(audioFile)
+playFile(audioFile)
