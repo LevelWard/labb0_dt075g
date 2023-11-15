@@ -1,4 +1,4 @@
-def spliceData(samples_array):
+def spliceSample(samples_array):
     # takes in args 'samples_array'
     #
     #
@@ -7,7 +7,7 @@ def spliceData(samples_array):
 
 
 def sumOfSamples(a, b):
-    #
+    # takes in args a & b, which are samples of array
     #
     #
     sum_array = []
