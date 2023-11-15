@@ -15,10 +15,8 @@ def synthesize_sine_sound():
 
     # generate samples, note conversion to float32 array
     samples = (np.sin(2 * np.pi * np.arange(fs * duration) * f / fs)).astype(np.float32)
-
     # per @yahweh comment explicitly convert to bytes sequence
     output_bytes = (volume * samples).tobytes()
-
     # for paFloat32 sample values must be in range [-1.0, 1.0]
     stream = p.open(format=pyaudio.paFloat32,
                     channels=1,
